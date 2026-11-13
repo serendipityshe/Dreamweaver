@@ -1,0 +1,52 @@
+export { encodeRunInput, encodeRunFrame, readRunInput, readRunInputAsync, readRunFrame, readRunFrameAsync, runInputBinding } from "./run-input.js";
+export { expectedRunSnapshot } from "./run-snapshot.js";
+export { continuationSource } from "./continuation.js";
+export type { ContinuationSource } from "./continuation.js";
+export * from "./checkpoint-value.js";
+export * from "./validation-value.js";
+export * from "./initial-wake.js";
+export { factHistoryValue, factHistoryMatches, factHistoryByteBound } from "./fact-history.js";
+export * from "./policy-values.js";
+export * from "./command-value.js";
+export * from "./submit-input.js";
+export * from "./validation-value.js";
+export { encodeChildInput, encodeChildFrame, hasChildFrameSource, childAcceptanceEvent, readChildFrame, readChildFrameAsync, readChildInput, childInputBinding, sameChildValue } from "./child-input.js";
+export { stageActionRequestValues, retireActionRequestValues, encodeFixedActionRequest, requestValuePublicationWrites, readFixedActionRequest, readFixedActionRequestAsync, fixedActionRequestMatches, fixedActionValidationMatches, actionRequestValueSource, compactActionRequestPayload } from "./fixed-action-request.js";
+export type { ActionRequestValue } from "./fixed-action-request.js";
+export { validationReportRequest } from "./validation-receipt.js";
+export { actionAcceptanceEvent, encodeActionRequests, expandActionRequests, readActionAcceptance } from "./action-request.js";
+// Coordinator-private module entry; never re-export this from the public facade.
+export { SQLiteStore } from "./sqlite.js";
+export { commandProjectionByteBound } from "./command-value.js";
+export { stageEpochValue, abandonEpochValue, epochValuePublicationWrites } from "./command-value.js";
+export type { SQLWrite, CommitBatch, CommitEvidence, StorageOptions, AbsenceGuard, HistoryEvent, ValuePublication } from "./sqlite.js";
+export { ValueStore } from "./value-store.js";
+export { verifyCanonicalValue } from "./canonical-value.js";
+export { agentOutputValidation, completionRequest, readCompletionRequest, runConfigValidationSource } from "./completion-request.js";
+export { frameResultProjectionWrites, readFrameResult, readFrameResultAsync } from "./frame-result.js";
+export { dispatchDecisionEvent, completionEvents, readRunHistory, readRunHistoryAsync, encodeRunSnapshot, readRunSnapshot, readRunSnapshotAsync } from "./run-snapshot.js";
+export { readRunControl, type RunControl } from "./run-control.js";
+export { dispatchRequest, readTransitionRequest } from "./dispatch-request.js";
+export { encodePreparationOriginals, encodePreparationRewrites, encodePreparationResolved,
+  readPreparationOriginals, readPreparationRewritten, readPreparationResolved } from "./preparation-values.js";
+export { reportProjectionByteBound, readFactOutcome, readFactOutcomeForEvidence, readProjectedJson, readProjectedJsonSync, readReportProjection, reportProjectionWrites } from "./projection.js";
+export { canonicalValueWitness, frameJobInput, readFrameInput, readWaitWake, waitFactWitness } from "./frame-input.js";
+export { makeFrameAssignmentReference, readFrameAssignment, sameFrameAssignment } from "./frame-assignment.js";
+export type { ReportProjectionBinding, ReportProjectionSelector } from "./projection.js";
+export { makeActionControl, actionControlDigest, actionControlWrite, readActionControl } from "./action-control.js";
+export { encodeActionSnapshot, readActionExecutionState, readActionReuseIdentity, readActionSnapshot, readInlineActionSnapshot, reportActionSnapshotProjection, verifyActionAcceptance, verifyActionFixedRequest, verifyActionOutcome, readActionCommandReceipt } from "./action-snapshot.js";
+export type { ActionControl } from "./action-control.js";
+export type { StoredValue, UnboundValueCandidate } from "./value-store.js";
+export { ReportTransferBindings } from "./report-transfer-bindings.js";
+export type { ReportTransferBinding, DiagnosticTransferReceipt } from "./report-transfer-bindings.js";
+export { verifyDiagnosticTransferForEvidence } from "./diagnostic-transfer-evidence.js";
+export { verifyDirectDiagnostic, resumeDirectDiagnosticRetirements } from "./direct-diagnostic.js";
+export { actionReportValueReference, readActionReport, readActionReportForEvidence, reportOperationID, reportValueOwner, verifyInlineReportReceipt } from "./report-value.js";
+export { verifyReportValue, inspectVerifiedReport } from "./report-verifier.js";
+export type { VerifiedReport } from "./report-verifier.js";
+export { cancellationGuard } from "./cancellation.js";
+export type { CancellationSubject } from "./cancellation.js";
+
+export type { ActionExecutionState } from "./action-snapshot.js";
+
+export { verifyDriverValueSource, stageDriverValue, retireDriverValues, driverValueSource, readDriverValue, readDriverValueAsync, readFrameDecision, driverDecisionStorage } from "./driver-value.js";

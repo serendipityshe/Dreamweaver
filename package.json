@@ -1,0 +1,56 @@
+{
+  "name": "@dreamweaver/harness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Harness v1 connection, authentication and durable query SDK",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/harness/src/index.d.ts",
+      "import": "./dist/harness/src/index.js"
+    },
+    "./agent": {
+      "types": "./dist/agent/src/index.d.ts",
+      "import": "./dist/agent/src/index.js"
+    },
+    "./model": {
+      "types": "./dist/capacities/model/index.d.ts",
+      "import": "./dist/capacities/model/index.js"
+    },
+    "./app": {
+      "types": "./dist/agent/src/app/index.d.ts",
+      "import": "./dist/agent/src/app/index.js"
+    },
+    "./runtime": {
+      "types": "./dist/harness/src/runtime.d.ts",
+      "import": "./dist/harness/src/runtime.js"
+    }
+  },
+  "files": [
+    "dist",
+    "THIRD_PARTY_NOTICES.md",
+    "examples/agent/minimal.mjs",
+    "examples/agent/echo-agent.mjs",
+    "examples/agent/manual-runtime.mjs",
+    "templates/agent-app"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node -e \"require('node:fs').copyFileSync('core/package.json', 'dist/core/package.json')\"",
+    "prepack": "npm run build",
+    "example:agent": "npm run build && node examples/agent/minimal.mjs",
+    "typecheck": "npm run build && tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "tsx": "4.23.15",
+    "typescript": "6.0.2"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.6.0",
+    "ajv": "8.20.0",
+    "openai": "7.53.0"
+  }
+}
