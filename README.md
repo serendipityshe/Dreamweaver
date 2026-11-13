@@ -2,6 +2,8 @@
 
 DreamWeaver 提供 Agent 定义、模型与工具接入、任务执行、持久查询和恢复能力。SDK 包名为 `@dreamweaver/harness`，使用 Node.js 24 和 ESM。
 
+![通用 Harness 五模块架构，包含 Agent 网络、Message Layer、Execution Engine、Capacity Host、Self-Evolution、Persistence 和 Core 生命周期内核](assets/harness-architecture.png)
+
 ## 快速开始
 
 ```sh
